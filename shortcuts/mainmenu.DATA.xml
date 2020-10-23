@@ -648,7 +648,7 @@
 		<label2/>
 		<icon>special://skin/extras/icons/thumb_livetv.jpg</icon>
 		<thumb/>
-		<action>ActivateWindow(1124,return)</action>
+		<action>ActivateWindow(tvchannels)</action>
 		<visible>Pvr.HasTVChannels</visible>
 	</shortcut>
 	<shortcut>

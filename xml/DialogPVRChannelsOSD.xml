@@ -61,7 +61,7 @@
 					<param name="thumblabel" value="$INFO[ListItem.Channelname]"/>
 					<param name="sublabel" value="$VAR[SubListLabel]"/>
 					<param name="use_custom_content" value="false"/>
-					<param name="layout" value="PVR4to3Layout"/>
+					<param name="layout" value="PVR4to3Layout+"/>
 				</include>
 				<include condition="Skin.HasSetting(NoMiniEPG) + String.IsEqual(Skin.String(EPGar),2to3)" content="PosterWidget">
 					<param name="id" value="11"/>

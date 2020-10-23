@@ -148,6 +148,11 @@
 		</font>
 		<!-- Regular -->
 		<font>
+			<name>Reg50</name>
+			<filename>NotoSans-Medium.ttf</filename>
+			<size>72</size>
+		</font>
+		<font>
 			<name>Reg37</name>
 			<filename>NotoSans-Medium.ttf</filename>
 			<size>37</size>

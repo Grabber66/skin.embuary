@@ -81,11 +81,13 @@
 						| [!String.IsEmpty(Player.Art(tvshow.poster)) + !String.StartsWith(Window(home).Property(Player.Art(tvshow.poster).ar),1)]
 						]
 					</visible>
+					<visible>!VideoPlayer.HasEpg</visible>
 				</control>
 			</control>
 			<!-- osd -->
 			<control type="group" id="99">
 				<animation effect="slide" time="0" start="0,0" end="0,60" condition="!Window.IsVisible(videoosd)">Conditional</animation>
+				<visible>!VideoPlayer.HasEpg</visible>
 				<!-- progress bars -->
 				<control type="group" id="99">
 					<height>50</height>
@@ -171,14 +173,6 @@
 						<texturebg colordiffuse="00ffffff">common/white.jpg</texturebg>
 						<midtexture colordiffuse="$VAR[PlayerAccentColor]">common/white.jpg</midtexture>
 						<visible>!VideoPlayer.HasEpg</visible>
-					</control>
-					<!-- LiveTV + timeshift progress bar -->
-					<control type="progress" id="99">
-						<include>PlayerProgressDimension</include>
-						<info>PVR.EpgEventProgress</info>
-						<texturebg colordiffuse="grey">common/white.jpg</texturebg>
-						<midtexture colordiffuse="$VAR[PlayerAccentColor]">common/white.jpg</midtexture>
-						<visible>VideoPlayer.HasEpg</visible>
 					</control>
 				</control>
 				<!-- label section -->

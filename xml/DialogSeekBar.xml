@@ -23,22 +23,10 @@
 				<textureslidernib colordiffuse="$VAR[PlayerAccentColor]">views/player/nib_bubble.png</textureslidernib>
 				<textureslidernibfocus colordiffuse="$VAR[PlayerAccentColor]">views/player/nib_bubble.png</textureslidernibfocus>
 			</control>
-			<control type="slider" id="402">
-				<visible>Player.Forwarding | Player.Rewinding | $EXP[PlayerSeek]</visible>
-				<visible>VideoPlayer.HasEpg</visible>
-				<bottom>39</bottom>
-				<left>349</left>
-				<right>149</right>
-				<height>8</height>
-				<orientation>horizontal</orientation>
-				<texturesliderbar colordiffuse="00ffffff">common/white.jpg</texturesliderbar>
-				<textureslidernib colordiffuse="$VAR[PlayerAccentColor]">views/player/nib_bubble.png</textureslidernib>
-				<textureslidernibfocus colordiffuse="$VAR[PlayerAccentColor]">views/player/nib_bubble.png</textureslidernibfocus>
-			</control>
 			<control type="group">
 				<visible>Player.Forwarding | Player.Rewinding | $EXP[PlayerSeek]</visible>
+				<visible>!VideoPlayer.HasEpg</visible>
 				<include condition="!VideoPlayer.HasEpg">OSD_Seek_Position</include>
-				<include condition="VideoPlayer.HasEpg" content="OSD_Seek_Position">
 					<param name="id" value="402"/>
 				</include>
 				<left>349</left>

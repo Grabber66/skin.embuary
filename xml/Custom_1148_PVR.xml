@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1148">
+	<defaultcontrol></defaultcontrol>
+	<visible>$EXP[PlayerSeek] | Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowInfo | Window.IsActive(fullscreeninfo) | Window.IsActive(videoosd)</visible>
+	<visible>[Window.IsActive(visualisation) | Window.IsActive(fullscreenvideo)] + !Player.HasGame</visible>
+	<visible>!Player.HasAudio</visible>
+	<visible>VideoPlayer.Content(livetv)</visible>
+	<zorder>0</zorder>
+	<include>PropertyIncludes</include>
+	<controls>
+	<!-- Hidden -->
+		<control type="list" id="2000">
+			<include>HiddenObject</include>
+			<content limit="1">$VAR[ListItemFullInfo]</content>
+		</control>
+		<control type="list" id="50">
+			<include>HiddenObject</include>
+		</control>
+	<!-- osd pvr -->
+		<control type="group" id="1148">
+			<animation effect="slide" time="0" start="0,0" end="0,60" condition="!Window.IsVisible(videoosd)">Conditional</animation>		
+			<!-- progress bars -->
+			<control type="group" id="1148">
+				<height>50</height>
+				<left>230</left>
+				<right>30</right>
+				<bottom>175</bottom>
+				<control type="label" id="1148">	<!-- Uhrzeit Start -->
+					<width>100</width>
+					<height>50</height>
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>Reg24</font>
+					<textcolor>white</textcolor>
+					<label>$INFO[ListItem.StartTime]</label>
+				</control>
+				<control type="label" id="1148">	<!-- Zeit gelaufen -->
+					<top>25</top>
+					<left>700</left>
+					<width>100</width>
+					<height>50</height>
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>Reg24</font>
+					<textcolor>white</textcolor>
+					<label>$VAR[PlayerTimeFull]</label>
+					<visible>!String.IsEmpty(Player.Time)</visible>
+				</control>
+				<control type="label" id="1148">	<!-- Uhrzeit Ende -->
+					<width>100</width>
+					<right>0</right>
+					<height>50</height>
+					<align>right</align>
+					<aligny>center</aligny>
+					<font>Reg24</font>
+					<textcolor>white</textcolor>
+					<label>$VAR[PlayerDurationFull]</label>
+				</control>
+				<control type="grouplist" id="1148">
+					<top>-50</top>
+					<right>0</right>
+					<width>500</width>
+					<height>50</height>
+					<align>right</align>
+					<orientation>horizontal</orientation>
+					<itemgap>25</itemgap>
+					<control type="label" id="1148">
+						<height>50</height>
+						<width>auto</width>
+						<aligny>center</aligny>
+						<font>Material34</font>
+						<textcolor>white</textcolor>
+						<label>$VAR[PlaylistRepeatLabel]</label>
+						<visible>Playlist.IsRepeat | Playlist.IsRepeatOne</visible>
+					</control>
+					<control type="label" id="1148">
+						<height>50</height>
+						<width>auto</width>
+						<aligny>center</aligny>
+						<font>Material34</font>
+						<textcolor>white</textcolor>
+						<label>&#xf49d;</label>
+						<visible>Playlist.IsRandom</visible>
+					</control>
+					<control type="label" id="1148">
+						<width>auto</width>
+						<height>50</height>
+						<aligny>center</aligny>
+						<font>Reg24</font>
+						<textcolor>white</textcolor>
+						<label>$VAR[PlayerFinishTime,$LOCALIZE[31037] ]</label>
+					</control>
+					<control type="label" id="1148">
+						<width>auto</width>
+						<height>50</height>
+						<aligny>center</aligny>
+						<font>Reg24</font>
+						<textcolor>white</textcolor>
+						<label>$LOCALIZE[31038]$INFO[PVR.TimeshiftOffset, (-,)]</label>
+						<visible>Pvr.IsTimeShift</visible>
+					</control>
+				</control>
+				<!-- LiveTV + timeshift progress bar -->
+				<control type="progress" id="1148">
+					<include>PlayerProgressDimension</include>
+					<info>PVR.EpgEventProgress</info>
+					<texturebg colordiffuse="grey">common/white.jpg</texturebg>
+					<midtexture colordiffuse="$VAR[PlayerAccentColor]">common/white.jpg</midtexture>
+					<visible>VideoPlayer.HasEpg</visible>
+				</control>
+			</control>
+			<!-- label section -->
+			<control type="group" id="1148">
+				<left>230</left>
+				<right>30</right>
+				<control type="label" id="1148"> <!-- Uhrzeit -->
+					<bottom>250</bottom>
+					<left>-220</left>
+					<height>50</height>
+					<font>Reg50</font>
+					<textcolor>white</textcolor>
+					<label>[B]$INFO[System.Time][/B]</label>
+				</control>
+				<control type="image" id="1148">	<!-- Icon -->
+					<bottom>90</bottom>
+					<left>-220</left>
+					<width>200</width>
+					<height>200</height>
+					<texture background="true">$VAR[PlayerIcon]</texture>
+					<aspectratio scalediffuse="false" aligny="center">keep</aspectratio>
+					<bordersize>11</bordersize>
+				</control>
+				<control type="label" id="1148">	<!-- Kanalnummer -->
+					<bottom>290</bottom>
+					<left>-20</left>
+					<width>100</width>
+					<align>right</align>
+					<height>50</height>
+					<font>Med40</font>
+					<textcolor>white</textcolor>
+					<label>[B]$INFO[VideoPlayer.ChannelNumberLabel].[/B]</label>
+					<scroll>true</scroll>
+				</control>
+				<control type="label" id="1148">  <!-- Sendername -->
+					<bottom>290</bottom>
+					<left>90</left>
+					<height>50</height>
+					<font>Med40</font>
+					<textcolor>white</textcolor>
+					<label>[B]$VAR[PlayerTitleLabel][/B]</label>
+				</control>
+				<control type="label" id="1148">	<!-- Sendungstitel -->
+					<height>50</height>
+					<bottom>240</bottom>
+					<left>90</left>
+					<right>300</right>
+					<aligny>center</aligny>
+					<font>Reg37</font>
+					<textcolor>white</textcolor>
+					<label>$VAR[PlayerFullLabel]</label>
+					<visible>![layer.IsRandom | Playlist.IsRepeat | Playlist.IsRepeatOne]</visible>
+				</control>
+				<control type="label" id="1148">	<!-- Info's -->
+					<bottom>214</bottom>
+					<left>90</left>
+					<width>auto</width>
+					<height>30</height>
+					<align>left</align>
+					<font>Reg24</font>
+					<textcolor>white</textcolor>
+					<label>$VAR[PlayerEpisodeName,,   ]</label>
+					<visible>VideoPlayer.Content(livetv) | String.StartsWith(Player.Filenameandpath,pvr://)</visible>
+				</control>
+				<control type="label" id="1148">	<!-- Next Sendungszeit -->
+					<height>50</height>
+					<bottom>150</bottom>
+					<left>90</left>
+					<right>300</right>
+					<aligny>center</aligny>
+					<font>Reg24</font>
+					<textcolor>white</textcolor>
+					<label>[COLOR grey]$LOCALIZE[31012]:[/COLOR] $INFO[VideoPlayer.NextStartTime] - $INFO[VideoPlayer.NextEndTime]</label>
+					<visible>![layer.IsRandom | Playlist.IsRepeat | Playlist.IsRepeatOne]</visible>
+				</control>			
+				<control type="label" id="1148">	<!-- Next Sendungstitel -->
+					<height>50</height>
+					<bottom>122</bottom>
+					<left>90</left>
+					<right>300</right>
+					<aligny>center</aligny>
+					<font>Reg24</font>
+					<textcolor>white</textcolor>
+					<label>$INFO[VideoPlayer.NextTitle]</label>
+					<visible>![layer.IsRandom | Playlist.IsRepeat | Playlist.IsRepeatOne]</visible>
+				</control>				
+<!--				<control type="label" id="1148">	<!-- Auflösung -->
+<!--					<include>NoTextures</include>
+					<width>auto</width>
+					<height>30</height>
+					<aligny>center</aligny>
+					<align>right</align>
+					<font>Reg24</font>
+					<textcolor>white</textcolor>
+					<label>$VAR[PlayerResolution,,   ]</label>
+					<visible>!Player.ShowInfo</visible>
+					<visible>VideoPlayer.Content(livetv) | String.StartsWith(Player.Filenameandpath,pvr://)</visible>
+					<visible>!$EXP[PlayingCinemaMode]</visible>
+				</control>
+-->				
+				<control type="image" id="1148">
+					<visible>Player.Paused</visible>
+					<bottom>350</bottom>
+					<left>700</left>				
+					<width>40</width>
+					<height>40</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<aspectratio scalediffuse="false" align="left" aligny="top">keep</aspectratio>
+					<texture>icons/pause.png</texture>
+				</control>
+				<control type="image" id="1148">
+					<visible>Player.Seeking</visible>
+					<bottom>350</bottom>
+					<left>700</left>				
+					<width>40</width>
+					<height>40</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<aspectratio scalediffuse="false" align="left" aligny="top">keep</aspectratio>
+					<texture>icons/seek.png</texture>
+				</control>
+				<control type="image" id="1148">
+					<visible>Player.Player.Forwarding | Player.Player.Forwarding2x | Player.Player.Forwarding4x | Player.Player.Forwarding8x | Player.Player.Forwarding16x | Player.Player.Forwarding32x</visible>
+					<bottom>350</bottom>
+					<left>700</left>				
+					<width>40</width>
+					<height>40</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<aspectratio scalediffuse="false" align="left" aligny="top">keep</aspectratio>
+					<texture>icons/forward.png</texture>
+				</control>
+				<control type="image" id="1148">
+					<visible>Player.Player.Rewinding | Player.Player.Rewinding2x | Player.Player.Rewinding4x | Player.Player.Rewinding8x | Player.Player.Rewinding16x | Player.Player.Rewinding32x</visible>
+					<bottom>350</bottom>
+					<left>700</left>				
+					<width>40</width>
+					<height>40</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<aspectratio scalediffuse="false" align="left" aligny="top">keep</aspectratio>
+					<texture>icons/rewind.png</texture>
+				</control>
+			</control>
+		</control>	
+	</controls>		
+</window>
