@@ -8,6 +8,7 @@
 	<zorder>0</zorder>
 	<include>PropertyIncludes</include>
 	<controls>
+		<include>PVRChannelNumberInput</include>
 	<!-- Hidden -->
 		<control type="list" id="2000">
 			<include>HiddenObject</include>
@@ -18,7 +19,17 @@
 		</control>
 	<!-- osd pvr -->
 		<control type="group" id="1148">
-			<animation effect="slide" time="0" start="0,0" end="0,60" condition="!Window.IsVisible(videoosd)">Conditional</animation>		
+			<animation effect="slide" time="0" start="0,0" end="0,60" condition="!Window.IsVisible(videoosd)">Conditional</animation>
+			<visible>!Player.HasGame</visible>
+			<bottom>0</bottom>
+			<height>190</height>
+			<control type="image">
+				<bottom>132</bottom>
+				<left>-40</left>
+				<width>120%</width>
+				<height>220</height>
+				<texture flipy="true">items/inner_shadow.png</texture>
+			</control>
 			<!-- progress bars -->
 			<control type="group" id="1148">
 				<height>50</height>
@@ -179,7 +190,7 @@
 					<aligny>center</aligny>
 					<font>Reg24</font>
 					<textcolor>white</textcolor>
-					<label>[COLOR grey]$LOCALIZE[31012]:[/COLOR] $INFO[VideoPlayer.NextStartTime] - $INFO[VideoPlayer.NextEndTime]</label>
+					<label>[COLOR blue]$LOCALIZE[31012]:[/COLOR] $INFO[VideoPlayer.NextStartTime] - $INFO[VideoPlayer.NextEndTime]</label>
 					<visible>![layer.IsRandom | Playlist.IsRepeat | Playlist.IsRepeatOne]</visible>
 				</control>			
 				<control type="label" id="1148">	<!-- Next Sendungstitel -->
@@ -191,10 +202,11 @@
 					<font>Reg24</font>
 					<textcolor>white</textcolor>
 					<label>$INFO[VideoPlayer.NextTitle]</label>
-					<visible>![layer.IsRandom | Playlist.IsRepeat | Playlist.IsRepeatOne]</visible>
+					<visible>![Player.IsRandom | Playlist.IsRepeat | Playlist.IsRepeatOne]</visible>
 				</control>				
-<!--				<control type="label" id="1148">	<!-- Auflösung -->
-<!--					<include>NoTextures</include>
+				<control type="label" id="1148">	<!-- Auflösung -->
+					<include>NoTextures</include>
+					<bottom>132</bottom>
 					<width>auto</width>
 					<height>30</height>
 					<aligny>center</aligny>
@@ -202,12 +214,10 @@
 					<font>Reg24</font>
 					<textcolor>white</textcolor>
 					<label>$VAR[PlayerResolution,,   ]</label>
-					<visible>!Player.ShowInfo</visible>
 					<visible>VideoPlayer.Content(livetv) | String.StartsWith(Player.Filenameandpath,pvr://)</visible>
 					<visible>!$EXP[PlayingCinemaMode]</visible>
-				</control>
--->				
-				<control type="image" id="1148">
+				</control>			
+<!--				<control type="image" id="1148">
 					<visible>Player.Paused</visible>
 					<bottom>350</bottom>
 					<left>700</left>				
@@ -251,6 +261,7 @@
 					<aspectratio scalediffuse="false" align="left" aligny="top">keep</aspectratio>
 					<texture>icons/rewind.png</texture>
 				</control>
+-->
 			</control>
 		</control>	
 	</controls>		

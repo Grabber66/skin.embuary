@@ -13,7 +13,7 @@
 			<!-- Seekbar nib -->
 			<control type="slider" id="401">
 				<visible>Player.Forwarding | Player.Rewinding | $EXP[PlayerSeek]</visible>
-				<visible>!VideoPlayer.HasEpg</visible>
+				<visible>!VideoPlayer.Content(livetv)</visible>
 				<bottom>39</bottom>
 				<left>349</left>
 				<right>149</right>
@@ -25,7 +25,7 @@
 			</control>
 			<control type="group">
 				<visible>Player.Forwarding | Player.Rewinding | $EXP[PlayerSeek]</visible>
-				<visible>!VideoPlayer.HasEpg</visible>
+				<visible>!VideoPlayer.Content(livetv)</visible>
 				<include condition="!VideoPlayer.HasEpg">OSD_Seek_Position</include>
 					<param name="id" value="402"/>
 				</include>

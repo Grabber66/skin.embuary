@@ -914,7 +914,7 @@
 			<control type="image">
 				<width>430</width>
 				<height>242</height>
-<!--				<texture colordiffuse="thumb_background">common/white.jpg</texture> -->
+				<texture colordiffuse="thumb_background">common/white.jpg</texture>
 				<aspectratio scalediffuse="false">stretch</aspectratio>
 				<visible>!String.IsEmpty(PVR.EpgEventIcon) | !String.IsEmpty(Player.Icon)</visible>
 			</control>

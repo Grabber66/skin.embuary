@@ -25,7 +25,7 @@
 				</include>
 				<control type="image">
 					<bottom>0</bottom>
-					<width>100%</width>
+					<width>51%</width>
 					<include content="ParamHeight" condition="!Skin.HasSetting(NoMiniEPG)">
 						<param name="height" value="434"/>
 					</include>
@@ -33,7 +33,7 @@
 						<param name="height" value="523"/>
 					</include>
 					<include content="ParamHeight" condition="Skin.HasSetting(NoMiniEPG) + String.IsEqual(Skin.String(EPGar),4to3)">
-						<param name="height" value="395"/>
+						<param name="height" value="795"/>
 					</include>
 					<include content="ParamHeight" condition="Skin.HasSetting(NoMiniEPG) + String.IsEmpty(Skin.String(EPGar))">
 						<param name="height" value="410"/>
@@ -61,7 +61,7 @@
 					<param name="thumblabel" value="$INFO[ListItem.Channelname]"/>
 					<param name="sublabel" value="$VAR[SubListLabel]"/>
 					<param name="use_custom_content" value="false"/>
-					<param name="layout" value="PVR4to3Layout+"/>
+					<param name="layout" value="PVR4to3Layout"/>
 				</include>
 				<include condition="Skin.HasSetting(NoMiniEPG) + String.IsEqual(Skin.String(EPGar),2to3)" content="PosterWidget">
 					<param name="id" value="11"/>
