@@ -1586,12 +1586,14 @@
 			</control>
 		</definition>
 	</include>
+<!-- Grabber66 -->
 	<!-- Fake mini epg -->
 	<include name="MiniEPG">
 		<control type="group">
+		<width>50%</width>
 			<!-- headlines -->
 			<control type="group">
-				<bottom>383</bottom>
+				<top>5</top>
 				<height>30</height>
 				<!-- channel layout -->
 				<control type="group">
@@ -1608,32 +1610,12 @@
 					<left>395</left>
 					<!-- on now -->
 					<control type="group">
-						<width>50%</width>
+						<width>100%</width>
 						<control type="label">
 							<left>25</left>
 							<height>30</height>
 							<font>Med20</font>
-							<label>$LOCALIZE[31346]</label>
-							<aligny>center</aligny>
-						</control>
-						<control type="label">
-							<right>25</right>
-							<height>30</height>
-							<font>Med20</font>
-							<label>$LOCALIZE[19127]</label>
-							<aligny>center</aligny>
-							<align>right</align>
-						</control>
-					</control>
-					<!-- next up  -->
-					<control type="group">
-						<right>0</right>
-						<width>50%</width>
-						<control type="label">
-							<left>25</left>
-							<height>30</height>
-							<font>Med20</font>
-							<label>$LOCALIZE[31012]</label>
+							<label>$LOCALIZE[31346] | $LOCALIZE[31012]</label>
 							<aligny>center</aligny>
 						</control>
 						<control type="label">
@@ -1647,10 +1629,21 @@
 					</control>
 				</control>
 			</control>
+			<!-- grid -->
+			<control type="image">
+				<texture colordiffuse="grid_border">common/white.jpg</texture>
+				<top>38</top>
+				<height>2</height>
+			</control>
+			<control type="image">
+				<texture colordiffuse="grid_border">common/white.jpg</texture>
+				<bottom>3%</bottom>
+				<height>2</height>
+			</control>
 			<!-- list -->
 			<control type="list" id="11">
-				<bottom>30</bottom>
-				<height>332</height>
+				<top>40</top>
+				<height>900</height>
 				<orientation>vertical</orientation>
 				<onleft>PreviousChannelGroup</onleft>
 				<onright>NextChannelGroup</onright>
@@ -1663,27 +1656,23 @@
 					</include>
 				</focusedlayout>
 			</control>
-			<!-- grid -->
-			<control type="image">
-				<texture colordiffuse="grid_border">common/white.jpg</texture>
-				<bottom>360</bottom>
-				<height>2</height>
-			</control>
-			<control type="image">
-				<texture colordiffuse="grid_border">common/white.jpg</texture>
-				<bottom>30</bottom>
-				<height>2</height>
-			</control>
 			<!-- fake focus -->
 			<control type="group">
-				<animation effect="slide" end="0,-83" time="0" condition="Container(11).Row(2)">Conditional</animation>
-				<animation effect="slide" end="0,-166" time="0" condition="Container(11).Row(1)">Conditional</animation>
-				<animation effect="slide" end="0,-249" time="0" condition="Container(11).Row(0)">Conditional</animation>
-				<bottom>12</bottom>
+				<animation effect="slide" end="0,83" time="0" condition="Container(11).Row(9)">Conditional</animation>
+				<animation effect="slide" end="0,-0" time="0" condition="Container(11).Row(8)">Conditional</animation>
+				<animation effect="slide" end="0,-83" time="0" condition="Container(11).Row(7)">Conditional</animation>
+				<animation effect="slide" end="0,-166" time="0" condition="Container(11).Row(6)">Conditional</animation>
+				<animation effect="slide" end="0,-249" time="0" condition="Container(11).Row(5)">Conditional</animation>
+				<animation effect="slide" end="0,-332" time="0" condition="Container(11).Row(4)">Conditional</animation>
+				<animation effect="slide" end="0,-415" time="0" condition="Container(11).Row(3)">Conditional</animation>
+				<animation effect="slide" end="0,-498" time="0" condition="Container(11).Row(2)">Conditional</animation>				
+				<animation effect="slide" end="0,-581" time="0" condition="Container(11).Row(1)">Conditional</animation>
+				<animation effect="slide" end="0,-664" time="0" condition="Container(11).Row(0)">Conditional</animation>										
+				<top>704</top>
 				<left>395</left>
 				<height>101</height>
 				<control type="group">
-					<width>50%</width>
+					<width>100%</width>
 					<control type="image">
 						<left>-12</left>
 						<right>-10</right>
@@ -1707,36 +1696,38 @@
 					<height>83</height>
 					<texture border="3,3,3,3" colordiffuse="grid_border">views/guide/epg_tile.png</texture>
 				</control>
-				<control type="label">
+<!--				<control type="label">
 					<left>25</left>
 					<width>50</width>
 					<height>81</height>
 					<aligny>center</aligny>
-					<font>Reg22</font>
+					<font>Reg23</font>
 					<label>$INFO[ListItem.ChannelNumberLabel]</label>
 				</control>
-				<control type="label">
+-->				<control type="label">
 					<left>78</left>
-					<right>120</right>
+					<right>10</right>
 					<height>81</height>
 					<aligny>center</aligny>
-					<font>Reg22</font>
+					<font>Reg23</font>
 					<label>$INFO[ListItem.ChannelName]</label>
 				</control>
+
 				<control type="image">
-					<right>10</right>
-					<width>100</width>
+					<left>5</left>
+					<width>70</width>
 					<height>81</height>
 					<texture background="true">$INFO[ListItem.Icon]</texture>
-					<aspectratio align="right">keep</aspectratio>
+					<aspectratio align="left">keep</aspectratio>
 					<bordersize>10</bordersize>
 				</control>
+				
 			</control>
 			<!-- current programme -->
 			<control type="group">
 				<left>395</left>
 				<control type="group">
-					<width>50%</width>
+					<width>100%</width>
 					<control type="image">
 						<height>83</height>
 						<texture colordiffuse="cc282828">common/white.jpg</texture>
@@ -1748,10 +1739,11 @@
 					</control>
 					<control type="label">
 						<textoffsetx>25</textoffsetx>
-						<width>75%</width>
+						<width>85%</width>
 						<height>81</height>
-						<aligny>center</aligny>
-						<font>Reg22</font>
+						<aligny>top</aligny>
+						<font>Reg23</font>
+						<scroll>auto</scroll>
 						<selectedcolor>text_white</selectedcolor>
 						<label fallback="19055">$INFO[ListItem.Title]</label>
 					</control>
@@ -1760,44 +1752,40 @@
 						<textoffsetx>25</textoffsetx>
 						<width>25%</width>
 						<height>81</height>
-						<aligny>center</aligny>
+						<aligny>top</aligny>
 						<align>right</align>
-						<font>Reg22</font>
+						<font>Reg23</font>
 						<selectedcolor>text_white</selectedcolor>
 						<label>$INFO[ListItem.EndTime]</label>
 					</control>
-				</control>
-				<control type="group">
-					<right>0</right>
-					<width>50%</width>
-					<control type="image">
-						<height>83</height>
-						<texture border="3,3,3,3" colordiffuse="grid_border">views/guide/epg_tile.png</texture>
-					</control>
+				<!-- next programme -->
 					<control type="label">
 						<textoffsetx>25</textoffsetx>
-						<width>75%</width>
+						<width>85%</width>
 						<height>81</height>
+						<bottom>-20</bottom>
 						<aligny>center</aligny>
+						<scroll>auto</scroll>
 						<font>Reg22</font>
-						<selectedcolor>text_white</selectedcolor>
-						<label fallback="19055">$INFO[ListItem.NextTitle]</label>
+						<label fallback="19055">[COLOR text_sublabel]$INFO[ListItem.NextTitle][/COLOR]</label>
 					</control>
 					<control type="label">
 						<right>0</right>
 						<textoffsetx>25</textoffsetx>
 						<width>25%</width>
 						<height>81</height>
+						<bottom>-20</bottom>
 						<aligny>center</aligny>
 						<align>right</align>
 						<font>Reg22</font>
-						<selectedcolor>text_white</selectedcolor>
-						<label>$INFO[ListItem.NextEndTime]</label>
+						<label>[COLOR text_sublabel]$INFO[ListItem.NextEndTime][/COLOR]</label>
 					</control>
 				</control>
 			</control>
 		</definition>
 	</include>
+	
+
 	<!-- PVR -->
 	<include name="PVRPosterLayout">
 		<param name="mainlabel">$VAR[MainListLabel]</param>
@@ -2090,7 +2078,7 @@
 			<control type="group">
 				<visible>$PARAM[visible]</visible>
 				<include content="WidgetLabels">
-					<param name="top">239</param>
+					<param name="top">39</param>
 					<param name="width">340</param>
 					<param name="id">$PARAM[id]</param>
 					<param name="mainlabel">$PARAM[mainlabel]</param>
@@ -2102,7 +2090,7 @@
 					<include content="Animation_FocusBounce">
 						<param name="id" value="$PARAM[id]"/>
 					</include>
-					<height>242</height>
+					<height>442</height>
 					<control type="image">
 						<top>-2</top>
 						<left>-2</left>

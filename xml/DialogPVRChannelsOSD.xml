@@ -12,7 +12,7 @@
 			<control type="group">
 				<bottom>0</bottom>
 				<include content="ParamHeight" condition="!Skin.HasSetting(NoMiniEPG)">
-					<param name="height" value="474"/>
+					<param name="height" value="90%"/>	<!-- Channellist -->
 				</include>
 				<include content="ParamHeight" condition="Skin.HasSetting(NoMiniEPG) + String.IsEqual(Skin.String(EPGar),2to3)">
 					<param name="height" value="553"/>
@@ -27,7 +27,7 @@
 					<bottom>0</bottom>
 					<width>51%</width>
 					<include content="ParamHeight" condition="!Skin.HasSetting(NoMiniEPG)">
-						<param name="height" value="434"/>
+						<param name="height" value="100%"/> <!-- Channellistbackground -->
 					</include>
 					<include content="ParamHeight" condition="Skin.HasSetting(NoMiniEPG) + String.IsEqual(Skin.String(EPGar),2to3)">
 						<param name="height" value="523"/>
