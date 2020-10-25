@@ -102,8 +102,10 @@
 					<include content="Bounce_Right">
 						<param name="id">$PARAM[id]</param>
 					</include>
-					<onright>SetProperty(BounceRight,1,home)</onright>
+<!--					<onright>SetProperty(BounceRight,1,home)</onright>
 					<onright>noop</onright>
+-->
+					<onright>$PARAM[id]</onright>
 					<onleft>900</onleft>
 					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick]</onclick>
 					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick2]</onclick>
@@ -223,8 +225,10 @@
 					<include content="Bounce_Right">
 						<param name="id">$PARAM[id]</param>
 					</include>
-					<onright>SetProperty(BounceRight,1,home)</onright>
+<!--					<onright>SetProperty(BounceRight,1,home)</onright>
 					<onright>noop</onright>
+-->
+					<onright>$PARAM[id]</onright>
 					<onleft>900</onleft>
 					<onclick condition="!$PARAM[use_custom_onclick] + [[!Window.IsMedia + !$EXP[InfoDialogActive]] | Window.IsVisible(1115)] + $EXP[ForceCinemaMode] + !String.IsEmpty(ListItem.DBID) + !Integer.IsGreater(ListItem.PercentPlayed,0) + [[String.IsEqual(ListItem.DBType,episode) + !String.IsEqual(Skin.String(CinemaModeFor),movies)] | [String.IsEqual(ListItem.DBType,movie) + !String.IsEqual(Skin.String(CinemaModeFor),episodes)]]">RunScript(script.embuary.helper,action=playcinema)</onclick>
 					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick]</onclick>
@@ -347,8 +351,10 @@
 					<include content="Bounce_Right">
 						<param name="id">$PARAM[id]</param>
 					</include>
-					<onright>SetProperty(BounceRight,1,home)</onright>
+<!--					<onright>SetProperty(BounceRight,1,home)</onright>
 					<onright>noop</onright>
+-->
+					<onright>$PARAM[id]</onright>
 					<onleft>900</onleft>
 					<oninfo condition="String.IsEqual(ListItem.DBType,set) + !String.IsEmpty(Container(2001).ListItem.Label)">RunScript(script.embuary.helper,action=textviewer,header='$ESCINFO[ListItem.Title]',message='$ESCVAR[ListViewPlot]')</oninfo>
 					<onclick condition="!$PARAM[use_custom_onclick] + [[!Window.IsMedia + !$EXP[InfoDialogActive]] | Window.IsVisible(1115)] + $EXP[ForceCinemaMode] + !String.IsEmpty(ListItem.DBID) + !Integer.IsGreater(ListItem.PercentPlayed,0) + [[String.IsEqual(ListItem.DBType,episode) + !String.IsEqual(Skin.String(CinemaModeFor),movies)] | [String.IsEqual(ListItem.DBType,movie) + !String.IsEqual(Skin.String(CinemaModeFor),episodes)]]">RunScript(script.embuary.helper,action=playcinema)</onclick>
@@ -462,8 +468,10 @@
 					<include content="Bounce_Right">
 						<param name="id">$PARAM[id]</param>
 					</include>
-					<onright>SetProperty(BounceRight,1,home)</onright>
+<!--					<onright>SetProperty(BounceRight,1,home)</onright>
 					<onright>noop</onright>
+-->
+					<onright>$PARAM[id]</onright>
 					<onleft>900</onleft>
 					<!-- select action -->
 					<onclick condition="!$PARAM[force_search]">SetProperty(Context.1.Label,$LOCALIZE[31378])</onclick>
@@ -641,8 +649,10 @@
 					<include content="Bounce_Right">
 						<param name="id">$PARAM[id]</param>
 					</include>
-					<onright>SetProperty(BounceRight,1,home)</onright>
+<!--					<onright>SetProperty(BounceRight,1,home)</onright>
 					<onright>noop</onright>
+-->
+					<onright>$PARAM[id]</onright>
 					<onleft>900</onleft>
 					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick]</onclick>
 					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick2]</onclick>
@@ -725,11 +735,13 @@
 					<preloaditems>4</preloaditems>
 					<movement>5</movement>
 					<ondown>$PARAM[ondown]</ondown>s
-					<onright>SetProperty(BounceRight,1,home)</onright>
+<!--					<onright>SetProperty(BounceRight,1,home)</onright>
 					<include content="Bounce_Right">
 						<param name="id">$PARAM[id]</param>
 					</include>
 					<onright>noop</onright>
+-->
+					<onright>$PARAM[id]</onright>
 					<onleft>900</onleft>
 					<onup>$PARAM[onup]</onup>
 					<include>ScrollTimeWidgets</include>
@@ -840,11 +852,13 @@
 					<preloaditems>4</preloaditems>
 					<movement>6</movement>
 					<ondown>$PARAM[ondown]</ondown>s
-					<onright>SetProperty(BounceRight,1,home)</onright>
+<!--					<onright>SetProperty(BounceRight,1,home)</onright>
 					<include content="Bounce_Right">
 						<param name="id">$PARAM[id]</param>
 					</include>
 					<onright>noop</onright>
+-->
+					<onright>$PARAM[id]</onright>
 					<onleft>900</onleft>
 					<onup>$PARAM[onup]</onup>
 					<include>ScrollTimeWidgets</include>
@@ -924,8 +938,10 @@
 					<include content="Bounce_Right">
 						<param name="id">$PARAM[id]</param>
 					</include>
-					<onright>SetProperty(BounceRight,1,home)</onright>
+<!--					<onright>SetProperty(BounceRight,1,home)</onright>
 					<onright>noop</onright>
+-->
+					<onright>$PARAM[id]</onright>
 					<onleft>900</onleft>
 					<onup>$PARAM[onup]</onup>
 					<include>ScrollTimeWidgets</include>
@@ -1077,8 +1093,10 @@
 					<include content="Bounce_Right">
 						<param name="id">$PARAM[id]</param>
 					</include>
-					<onright>SetProperty(BounceRight,1,home)</onright>
+<!--					<onright>SetProperty(BounceRight,1,home)</onright>
 					<onright>noop</onright>
+-->
+					<onright>$PARAM[id]</onright>
 					<onleft>900</onleft>
 					<onup>$PARAM[id]01</onup>
 					<include>ScrollTimeWidgets</include>
