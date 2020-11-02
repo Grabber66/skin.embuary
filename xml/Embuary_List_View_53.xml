@@ -163,6 +163,14 @@
 							<param name="bgcolor" value="ff515151"/>
 						</include>
 						<!-- plot -->
+						<control type="label">
+							<top>-60</top>
+							<bottom>0</bottom>
+							<align>center</align>
+							<aligny>top</aligny>
+							<font>Med40</font>
+							<label>$INFO[System.Time]</label>
+						</control>
 						<control type="textbox">
 							<top>510</top>
 							<bottom>0</bottom>

@@ -33,7 +33,7 @@
 					<onback>11</onback>
 					<onleft>900</onleft>
 					<onright>10</onright>
-					<onup>10</onup>
+					<onup>11</onup>
 					<ondown>10</ondown>
 					<pagecontrol>60</pagecontrol>
 					<scrolltime tween="quadratic" easing="out">300</scrolltime>
